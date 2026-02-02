@@ -1,0 +1,237 @@
+body{
+    overflow-x: hidden;
+    overflow-y: hidden;
+    background-color: #223;
+    height:100%;
+}
+html{
+    overflow-x: hidden;
+    overflow-y: hidden;
+    height:90%;
+}
+
+#headPopup{
+
+    position: absolute;
+    top:0;
+    left:0;
+
+    width:25%;
+    height:100%;
+    background-color: #335;
+
+    border-radius: 5px 30px 30px 5px;
+}
+
+.headPopupBtn{
+
+    display:block;
+    width:95%;
+    height:40px;
+
+    background-color: #0000;
+    border-style: none none inset solid;
+    border-bottom-color: #aaa;
+    border-bottom-width: 3px;
+    border-left-color: #2aa;
+    border-left-width: 1px;
+    color: #ccb;
+
+
+}
+.headPopupBtn:hover{
+    border-left-width: 6px;
+    border-bottom-width: 1px;
+    transition: 0.4s;
+    color:#fff;
+}
+#headPopupOpenClose{
+    position:absolute;
+    width:30px;
+    height:30px;
+    color: #ccb;
+    bottom: 8px;
+    right:8px;
+    background-color: #0005;
+    border: #0000;
+    border-radius: 1000px;
+}
+#headPopupOpenClose:hover{
+    width:35px;
+    height:35px;
+    bottom: 5.5px;
+    right:5.5px;
+    transition: 0.25s;
+}
+
+#content{
+    position: absolute;
+    top:0;
+    left:0;
+    overflow-y: auto;
+
+    width:95%;
+    height:100%;
+    background-color: #777;
+
+}
+
+#ButtonBack{
+    position: absolute;
+    top:8px;
+    right:8px;
+    border-radius: 3px;
+
+    border-style: double solid inset solid;
+    border-bottom-color: #aaa;
+    border-bottom-width: 5px;
+    border-right-color: #2aa;
+    border-right-width: 1px;
+    border-left-color: #2aa;
+    border-left-width: 1px;
+    border-top-color: #2aa;
+    border-top-width: 1px;
+    background-color: #0000;
+    color:#000;
+}
+#ButtonBack:hover:enabled{
+    top:11px;
+    border-bottom-width: 2px;
+    background-color: #156868;
+    transition: 0.25s;
+}
+#ButtonBack:active:enabled{
+    top:12px;
+    border-bottom-width: 1px;
+    background-color: #105050;
+    transition: 0.25s;
+}
+
+#ButtonBack:disabled{
+    background-color: #000;
+    color:#555;
+    transition: 0.25s;
+    border-right-color: #f00;
+    border-left-color: #f00;
+    border-top-color: #f00;
+}
+#ButtonBack:hover:disabled{
+    background-color: #d22;
+    color:#555;
+    transition: 0.25s;
+    border-right-color: #f00;
+    border-left-color: #f00;
+    border-top-color: #f00;
+
+    top:6px;
+    border-bottom-width: 7px;
+    rotate: -2deg;
+}
+#ButtonBack:active:disabled{
+    background-color: #d22;
+    color:#555;
+    transition: 0.25s;
+    border-right-color: #f00;
+    border-left-color: #f00;
+    border-top-color: #f00;
+
+    rotate: 2deg;
+}
+
+
+#fullscreenBlur{
+    pointer-events: none;
+    opacity: 0;
+    transition: 1.5s;
+
+    position: absolute;
+    left:0px;
+    top:0px;
+
+    width: 100vw;
+    height: 100vh;
+
+    /* From https://css.glass */
+    background: rgba(83, 87, 118, 0.36);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(6.1px);
+    -webkit-backdrop-filter: blur(6.1px);
+    border: 1px solid rgba(83, 87, 118, 0.4);
+}
+#InfoLinks{
+
+    position: absolute;
+    left: 50%;
+    top: 150%;
+    transition: 1s;
+
+    width: clamp(200px, 40vmin, 600px);
+    height: clamp(200px, 40vmin, 600px);
+
+    transform: translate(-50%, -50%);
+
+    /* From https://css.glass */
+    background: rgba(172, 172, 172, 0.39);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(14.9px);
+    -webkit-backdrop-filter: blur(14.9px);
+}
+
+.Link{
+    width:50px;
+    height: 50px;
+    border-radius: 20px;
+    border: none;
+    background-color: #000;
+}
+
+#ButtonLinkGit{
+    background-image: url("img/LinkGithub.png");
+    background-repeat: no-repeat;
+    background-size: 50px 50px;
+}
+#InfoLinksCenter{
+    position: relative;
+    left: 20%;
+    top: 20%;
+
+    width:60%;
+    height:60%;
+}
+
+#ButtonLinksClose{
+    position: relative;
+    left: 20%;
+    top: 30%;
+
+    width:60%;
+    height:10%;
+
+    transition: 0.5s;
+
+    /* From https://css.glass */
+    background: rgba(0, 0, 0, 0.35);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(6.1px);
+    -webkit-backdrop-filter: blur(6.1px);
+    border: 1px solid rgba(0, 0, 0, 0.19);
+}
+
+#ButtonLinksClose:hover{
+    /* From https://css.glass */
+    background: rgba(9, 9, 81, 0.35);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(6.1px);
+    -webkit-backdrop-filter: blur(6.1px);
+    border: 1px solid rgba(9, 9, 81, 0.19);
+}
+
+#ButtonLinksClose:active{
+    /* From https://css.glass */
+    background: rgba(0, 0, 255, 0.35);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(6.1px);
+    -webkit-backdrop-filter: blur(6.1px);
+    border: 1px solid rgba(0, 0, 255, 0.19);
+}

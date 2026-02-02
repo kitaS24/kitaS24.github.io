@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PAGES</title>
+    <link rel="stylesheet" type="text/css" href="PageStyle.css">
+</head>
+<body>
+<table>
+<tr>
+    <td>about Engine7</td>
+    <td><button onclick="ChangePage('Engine7.html');">READ</button></td>
+</tr>
+<tr>
+    <td>how to compile and setup Engine7</td>
+    <td><button onclick="ChangePage('Engine7Setup.html');">READ</button></td>
+</tr>
+</table>
+</body>
+<script>
+    function ChangePage(page){
+        window.location.replace(page);
+    }
+</script>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Engine7 setup</title>
+  <link rel="stylesheet" type="text/css" href="PageStyle.css">
+</head>
+<body>
+<h1>Engine7 Setup</h1>
+<hr>
+<h2>How to Compile Engine7</h2>
+<p>The first step is to compile the project. This project uses CMake.<br>
+The following commands create a "Build" folder, then build the engine in Release mode.</p>
+<pre class="code"><code>
+  mkdir Build
+  cd Build
+  cmake ..
+  cmake --build . --config Release
+</code></pre>
+<p>CMake does not build OpenAl Soft automatically. To compile OpenAl, get OpenAl (openal-soft).
+ Guides can be found in the OpenAl Soft README, or it can be built using:</p>
+<pre class="code"><code>
+  mkdir Build
+  cd Build
+  cmake ..
+  cmake --build . --config Release
+</code></pre>
+<p>After compiling, copy <strong>OpenAl32.dll</strong> into the engine's Build folder.</p>
+<p>If you are using the example project, it should launch.</p>
+<div class="LeftLine">
+<p> If you are beginning from scratch
+  (you can make your life easier by starting from the tutorial), make sure that you create the following files
+inside the "Game" folder:</p>
+<ul>
+  <li>EntManager.h</li>
+  <li>EntUser.h</li>
+  <li>GameEnt.cpp</li>
+  <li>GameSubsys.cpp</li>
+</ul>
+<!--<p>To set up these files, use <a href="Engine7FreshSetup.html">this tutorial</a>.<br>-->
+Next, create "textures" and "shaders" in the Build folder.</p>
+  <div class="SubLeftLine">
+    <p>Folder "textures" should contain "textures.ini". This file tells the engine which textures are available.
+<!--    To set it up, you can use <a href="Engine7FreshSetup.html">this tutorial</a>.-->
+      Also, folder "textures" should contain your textures
+    (in 24-BIT BMP). The engine supports 2 types of textures: COLOR, DATA</p>
+    <p>Folder "shaders" must contain your shaders, the engine comes with PBR shaders. (Each shader consists of a Vertex and a Fragment shaders).
+    Shaders are stored as text files, written in GLSL (version 120)</p>
+
+  </div>
+</div>
+</body>
+</html>

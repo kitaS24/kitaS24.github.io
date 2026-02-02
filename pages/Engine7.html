@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ABOUT ENGINE7</title>
+    <link rel="stylesheet" type="text/css" href="PageStyle.css">
+</head>
+<body>
+<h1>ABOUT Engine7</h1>
+<hr>
+<p><strong>
+    <a href="https://github.com/kitaS24/Engine7">Engine7</a> is a C++ 3D engine that uses brushes for the level geometry.</strong><br>
+The engine uses: GLFW, GLEW, ImGui, OpenAl(openal-soft)  libraries
+</p>
+<p>
+    Brushes can be imported via the OBJ file that
+    <a href="https://trenchbroom.github.io/">Trenchbroom</a> creates.<br>
+    The best way to store maps for the engine is using <i>.gems</i> files. However, loading using .OBJ with .MAP
+    is possible.
+</p>
+<p>
+    Engine7 has some common engine features such as:</p>
+    <ul>
+    <li>scripting with classes</li>
+    <li>lighting system (point,spot lights)</li>
+    <li>collisions</li>
+    <li>key binds</li>
+    <li>3D audio</li>
+    <li>entity naming</li>
+    </ul>
+<p>As well as:</p>
+    <ul>
+        <li>world raycast</li>
+        <li>particle system</li>
+        <li>PBR</li>
+        <li>Flood Light (with shadows)</li>
+    </ul>
+
+<br>
+<p>
+    Engine7 supports PBR textures. They are .BMP (24bit uncompressed) textures.
+    For every material there are 2 textures:</p>
+    <ul>
+    <li>BASE</li>
+    <li>DATA</li>
+    </ul>
+    <p>DATA texture uses Red and Green color channels.
+    Where Red is for metallic parameter and Green is for roughness (shininess)
+    </p>
+    <h2>.GEMS format structure</h2>
+<ol>
+    <li>int BrushN | Brush Number in a level</li>
+    <li>Brushes | (slightly compressed. Unused sides removed)</li>
+    <li>unsigned int EntN | Entity count</li>
+    <li>each entity DEBUG name (64 bytes)</li>
+    <li>entity custom data. any format. Use Save Load function for that.</li>
+</ol>
+
+
+<a href="https://github.com/kitaS24/Engine7">GITHUB</a>
+</body>
+</html>

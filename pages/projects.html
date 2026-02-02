@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MY PROJECTS</title>
+  <link rel="stylesheet" type="text/css" href="PageStyle.css">
+</head>
+<body>
+<h1>MY PROJECTS</h1>
+<hr>
+
+<table>
+  <tr>
+    <td>Engine7</td>
+    <td><button onclick="ChangePage('Engine7.html');">about Engine7</button></td>
+    <td><a href="https://github.com/kitaS24/Engine7">GITHUB</a></td>
+  </tr>
+  <tr>
+    <td>SimpleGl</td>
+    <td><button onclick="ChangePage('SimpleGl.html');">about SimpleGl</button></td>
+    <td><a href="https://github.com/kitaS24/SimpleGl" >GITHUB</a></td>
+  </tr>
+
+</table>
+
+</body>
+<script>
+  function ChangePage(page){
+    window.location.replace(page);
+  }
+  function OpenPage(page){
+    window.location.href =page ;
+  }
+</script>
+</html>
