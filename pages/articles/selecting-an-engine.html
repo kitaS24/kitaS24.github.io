@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>TEST</title>
+  <link rel="stylesheet" type="text/css" href="PageStyle.css">
+</head>
+<body>
+<h1>Selecting an Engine</h1>
+<hr>
+<span>center text:</span><input id="UserChangeWidth" type="checkbox">
+<div id="Content">
+<p>
+  Selecting an engine is the first thing that a gamedev should do for the brand-new project. Once you choose an engine,
+  you are basically locked in already. Right now a lot of engines exist, some are open source, some are not. Some require
+  a license, some not. Some are quite easy to use, some are pretty hard to set up.
+</p>
+<p>
+  There are the 3 most used engines right now: Unreal Engine, Godot, and Unity. However, when you use these engines, you stick
+  to the way they render the world, and this can contradict your game style direction or make your game like other games
+  that use the same engine. That's why I personally like making a game with my own engine.
+  Doing it that way allows you to create your own visual style. Your own engine will allow you to code
+  instead of reading documentation someone else wrote.
+</p>
+<p>
+  There are some problems to address with making your own engine. The most important one being that it takes a lot of
+  time. Also, with making your own engine, you might have some bugs that can break rendering for the end user, this
+  sounds bad, because it is. But these bugs can happen to any engine, not only yours. Another thing to remember is that
+  you need to be good at math and physics to write your own engine. An engine always requires some sort of matrix math, or
+  even simple physics, for physics you might think that your engine needs the best physics engine available right now,
+  but I would say that not every game needs physics. Games like Doom, Quake, Half-Life don't have real physics, they
+  are fun to play, and that's what matters. For example, Half-Life was fun to play because you can feel that you are in
+  the same world because it reacts to your actions. When you flip a light switch, it turns off the light, makes the
+  science team mad at you, and they turn it back on. Every bullet fired at a wall leaves a decal.
+</p>
+<p>
+  What math do you need?<br>
+  When talking about the game engine, it's better to know at least basic physics, matrices, some vector math.
+  This is the main list of the things you should understand, and also it's better to understand how it works in 2D
+  <strong>and</strong> 3D, this will allow you to make a 2D or a 3D engine.
+  Also, it's a good idea to do a bit of research on the way engines work. For example, how "id Tech 2" (Quake engine)
+  handled collisions, lighting, PVS. Maybe watch some videos from the channel "Matt's Ramblings". He explains PVS,
+  the light baking process, rendering. His videos are mostly for Quake 1 but the methods shown are still used to this
+  day.
+</p>
+<p>
+  When writing an engine, it should not be the same quality as the Unreal Engine. It's just not doable. Also, engines
+  don't need an editor. The editor should be standalone, but at the same time I think that it's way better to use an already
+  existing editor. Your editor just will not have every feature you want, some will be missing, and you will notice it
+  pretty fast when creating your level. I use TrenchBroom, it's an open source level editor that is mainly used for games
+  like Quake. TrenchBroom isn't perfect, nothing is, it's good enough for the current project and style.
+</p>
+<p>
+  Now talking about the optimization. When starting to work on any game/project/engine optimization isn't the thing
+  you should be worried about. You should worry about it only when you are sure how your current system will work or
+  your system's performance is too bad already. Most of the optimizations should happen at the end, or if you know that
+  something is already underperforming. The best way to think about some optimization that will take you some time to
+  implement is to think of a solution, simulate how it will work, see what you will have to change in your current
+  setup to make it work. Then, try to find another way that is better and faster to implement. Finally, look at the way
+  it was already done. Afterward, you can stick to your solution or someone else's solution, maybe mix them. Next,
+  think of the way to implement it, split it into steps or actions you must take, then implement it.<br>
+  I have implemented PVS this way, the first step was to think of my own solution, realize that it would not work, then think
+  of the other solution, and finally mix it with the way it was done before me. Next I have planned the way I would be
+  able to implement it, this has cut a lot of time to implement PVS.
+</p>
+
+<p>
+  In the end, there is not a single perfect engine, there is no perfect engine for your project. And the best way to
+  make an engine fit for your project is to make it yourself. Making an engine does involve a lot of knowledge, and it's
+  a long process. If you ever decide to make your own engine, don't expect that it will be perfect. Your engine does not
+  need to have the best graphics or physics, you should focus on the fun and interactivity of the game.
+</p>
+</div>
+
+</body>
+
+<script>
+  document.getElementById("UserChangeWidth")
+          .addEventListener("click", function e(){
+              if(document.getElementById("UserChangeWidth").checked){
+                document.getElementById("Content").style.width = "70ch";
+                document.getElementById("Content").style.marginLeft = "auto";
+                document.getElementById("Content").style.marginRight = "auto";
+              }else{
+                document.getElementById("Content").style.width = "100%";
+                document.getElementById("Content").style.marginLeft = "0";
+                document.getElementById("Content").style.marginRight = "0";
+              }
+          });
+</script>
+</html>

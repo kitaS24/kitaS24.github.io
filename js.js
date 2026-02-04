@@ -85,7 +85,10 @@ document.getElementById("ButtonLinksClose")
         FullscreenBlur(false);
         document.getElementById("InfoLinks").style.top = "150%";
     });
-
+document.getElementById("ButtonMyArticles")
+    .addEventListener("click", function e(){
+        document.getElementById("content").src = "pages/articles/all_articles.html";
+    });
 
 // history
 let History=[];
