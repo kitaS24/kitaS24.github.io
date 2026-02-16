@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Lightmap Implementation</title>
+  <link rel="stylesheet" type="text/css" href="PageStyle.css">
+</head>
+<body>
+<h1>Lightmap Implementation</h1>
+<hr>
+<span>center text:</span><input id="UserChangeWidth" type="checkbox">
+<div id="Content">
+
+  <p>First of all I have to answer the question. Why even consider lightmaps in the first place? They take some space,
+    and they have to be compiled first. This takes time. Why bother? <br> This is a totally legit question, and that's
+  what contributed to me not implementing them at first. After implementing lightmaps, I can say that it probably was
+  the best decision yet. I think that because my old method of doing that in a shader while giving a good result had
+   some core problems like not having shadows, as well as some performance-related issues.</p>
+
+  <p>Lightmaps are a great way to optimize lighting in the world. Lightmaps are a second texture that is multiplied
+  with the color of the base texture. While the base texture can tile, lightmaps cannot tile and lightmap luxels usually cover an area
+  about 16 to 32 times larger than the base texture. This results in a smaller texture. It's better to store lightmaps in the RGB565 format, I think so
+  because it only takes 16 bits per luxel (lightmap element). In the RGB888 format it takes 24 bits per luxel, I think
+    that lightmaps shouldn't store that much data because in the end they will be blurred. That's why I chose to use
+  16 bit lightmaps.</p>
+
+  <p>Lightmaps have some disadvantages and the main one is that while they are pretty efficient at runtime, it's pretty
+    slow to bake them. The second disadvantage is that they might look blocky at runtime due to the wrong filtering
+    option. The third disadvantage is that it might take a lot of space in the map file. I didn't find that a full-on disadvantage,
+    because while it takes some space in a file, with the right lightmap size it may take only about 20% and still look good.
+  </p>
+
+  <p>Now with that out of the way, to implement lightmaps you need a sort of compiler for the map, I had mine already,
+  at first its goal was to convert 2 files into a single file for the engine. Now I have added a possibility to compile
+  PVS and now lightmaps. The lightmap compilation process consists of UV mapping and then calculating every light for every
+  luxel. Then everything is converted into RGB565 format and stored into a file. Next, in the runtime it can be read and
+  saved on the GPU as a texture that can be accessed later within a shader.</p>
+
+  <p>
+    The first step is UV mapping. It can be achieved in 2 ways. First is with a normal, tangent, bitangent. These 3 vectors
+    form a matrix for that surface, and using it, it's possible to map 2D texture coordinates to the 3D plane. This
+    method is quite simple, but it requires a tangent and a bitangent vector, and in my engine I haven't had this info
+    available. This is why I was using another method, this method is using a normal vector and vertex position array to
+    calculate lightmap UVs for every vertex. It works by defining the bounding box for the plane at first, and then
+    using a normal to get the best plane to cast points from, I chose from planes: XY,XZ,YZ. using that I define a
+    matrix to project a 3D bounding box onto a single plane. From there it's possible to do the same for every point,
+    and then return their U and V coordinates that start from 0 and end with 1.
+  </p>
+  <p>
+    The next compilation step is almost the same, define a bounding box, define a matrix. But now after this step is
+    done, it's possible to calculate the appropriate width and height for the texture. The next step is to go over every
+    luxel and convert its position back to 3D and project it onto a plane using a normal vector. After finishing this
+    step, you end up with the luxel's position on the plane. From there you can go both ways, it's possible to implement
+    antialiasing here, or start with the baking process. Antialiasing is almost the same process as before, however, it
+    takes 4 samples for luxel instead of a 1. This hides transitions between luxels and makes lighting a bit
+    smoother. After that, using the position on the plane, you cast a ray from every light source and if the light is
+    visible from the luxel, it can affect it. The contribution to the luxel is calculated by the distance in meters and
+    the dot product between the normalized vector from the light and the normal of the surface. At the end, you convert
+    it into RGB565 or another format of your choice, and then store it in a file.
+  </p>
+
+  <p>
+    Compilation might take a while, and it's better to optimize it from the start. A great way to optimize it is to
+    use PVS and spread the baking task over a few threads. At the end it can reach a usable compilation time of about
+    35-50 seconds per level with PVS. The last thing to mention is that while still in the modeling process of the map
+    it is probably better to use larger luxels as well as turn off antialiasing, and only turn back on antialiasing and
+    make luxels smaller in the final build.
+  </p>
+
+  <p>
+    Lightmaps are a great way to implement lighting. It's pretty cheap in runtime, and it still can add another layer to
+    the immersion of the game. That's the reason why they were used in games like Quake, Quake II, Half-Life,
+    Half-Life 2, and other games.
+  </p>
+
+
+</div>
+
+</body>
+
+<script>
+  document.getElementById("UserChangeWidth")
+          .addEventListener("click", function e(){
+              if(document.getElementById("UserChangeWidth").checked){
+                document.getElementById("Content").style.width = "70ch";
+                document.getElementById("Content").style.marginLeft = "auto";
+                document.getElementById("Content").style.marginRight = "auto";
+              }else{
+                document.getElementById("Content").style.width = "100%";
+                document.getElementById("Content").style.marginLeft = "0";
+                document.getElementById("Content").style.marginRight = "0";
+              }
+          });
+</script>
+</html>
