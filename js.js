@@ -111,3 +111,41 @@ document.getElementById("ButtonBack")
         }
         document.getElementById("ButtonBack").disabled = History.length<=1;
     });
+
+
+
+
+////
+
+window.addEventListener("load", function e(){
+    const params = new URLSearchParams(window.location.search);
+    const a = params.get("sharedpage");
+    if (
+        !a ||
+        !a.startsWith("/pages/") ||
+        a.includes("://") ||
+        a.includes("..")
+    ) {
+        return;
+    }
+    document.getElementById("SharedPopup").style.display = "block";
+    document.getElementById("content").contentWindow.location.href = a;
+    });
+
+document.getElementById("ButtonShare")
+    .addEventListener("click", function e(){
+        const url = new URL(window.location.href);
+        url.searchParams.set("sharedpage", document.getElementById("content").contentWindow.location.pathname);
+        document.getElementById("ButtonShare").innerHTML = "COPIED!";
+
+        setTimeout(function e(){
+            document.getElementById("ButtonShare").innerHTML = "SHARE PAGE";
+        },1000);
+        navigator.clipboard.writeText(url.toString())
+            .catch(() => {
+                document.getElementById("ButtonShare").innerHTML = "FAILED TO COPY";
+                setTimeout(function e(){
+                    document.getElementById("ButtonShare").innerHTML = "SHARE PAGE";
+                },1000);
+            });
+});

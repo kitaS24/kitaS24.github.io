@@ -235,3 +235,37 @@ html{
     -webkit-backdrop-filter: blur(6.1px);
     border: 1px solid rgba(0, 0, 255, 0.19);
 }
+
+#ButtonShare{
+    position: absolute;
+    bottom:11px;
+    right:5px;
+    border-bottom-width: 2px;
+    background-color: #14a2dd;
+    color:#000;
+    transition: 0.25s;
+}
+
+#SharedPopup{
+    display:none;
+    position: absolute;
+
+    text-align: center;
+    width: 100%;
+    height: 20px;
+    background-color: #ff05;
+    bottom: 2px;
+    border-radius: 2px;
+    transition: 0.25s;
+}
+#SharedPopup:hover{
+    position: absolute;
+
+    text-align: center;
+    width: 100%;
+    height: 20px;
+    background-color: #ff02;
+    color:#0002;
+    bottom: 2px;
+    border-radius: 2px;
+}
