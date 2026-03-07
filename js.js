@@ -43,7 +43,7 @@ function UpdateSelectPanel(){
 
 setInterval(UpdateSelectPanel,1000/60);
 
-document.getElementById("headPopup").addEventListener("mouseover", function e(){SelectPanel = true;IgnoreTouchscreen=true;});
+$("#headPopup").mouseover( function e(){SelectPanel = true;IgnoreTouchscreen=true;});
 document.getElementById("headPopup").addEventListener("mouseout", function e(){SelectPanel = false;});
 document.getElementById("headPopup").addEventListener("click", function e(){
     if(!IgnoreTouchscreen) {
@@ -59,34 +59,28 @@ document.getElementById("headPopupOpenClose")
 
 
 //menu buttons
-document.getElementById("ButtonHome")
-    .addEventListener("click", function e(){
+
+$("#ButtonHome").click(function e(){
         document.getElementById("content").src = "pages/home.html";
     });
-document.getElementById("ButtonAboutMe")
-    .addEventListener("click", function e(){
+$("#ButtonAboutMe").click(function e(){
         document.getElementById("content").src = "pages/about.html";
     });
-document.getElementById("ButtonMyProjects")
-    .addEventListener("click", function e(){
+$("#ButtonMyProjects").click(function e(){
         window.location.replace("pages/projects.html");
     });
-document.getElementById("ButtonMyPages")
-    .addEventListener("click", function e(){
+$("#ButtonMyPages").click(function e(){
         document.getElementById("content").src = "pages/pages.html";
     });
-document.getElementById("ButtonLinks")
-    .addEventListener("click", function e(){
+$("#ButtonLinks").click(function e(){
         FullscreenBlur(true);
         document.getElementById("InfoLinks").style.top = "50%";
     });
-document.getElementById("ButtonLinksClose")
-    .addEventListener("click", function e(){
+$("#ButtonLinksClose").click(function e(){
         FullscreenBlur(false);
         document.getElementById("InfoLinks").style.top = "150%";
     });
-document.getElementById("ButtonMyArticles")
-    .addEventListener("click", function e(){
+$("#ButtonMyArticles").click(function e(){
         document.getElementById("content").src = "pages/articles/all_articles.html";
     });
 
@@ -99,17 +93,16 @@ setInterval(function e(){
         History.push(document.getElementById("content").contentWindow.location.href);
 
     }
-        document.getElementById("ButtonBack").disabled = History.length<=1;
+    $("#ButtonBack").prop("disabled", History.length<=1);
 },500);
 
-document.getElementById("ButtonBack")
-    .addEventListener("click", function e(){
-        document.getElementById("ButtonBack").disabled = History.length<=1;
-        if(!document.getElementById("ButtonBack").disabled){
+$("#ButtonBack").click(function e(){
+    $("#ButtonBack").prop("disabled",History.length<=1);
+        if(!$("#ButtonBack").prop("disabled")){
             History.pop();
             document.getElementById("content").contentWindow.location.href =History[History.length-1];
         }
-        document.getElementById("ButtonBack").disabled = History.length<=1;
+    $("#ButtonBack").prop("disabled", History.length<=1);
     });
 
 
@@ -128,24 +121,30 @@ window.addEventListener("load", function e(){
     ) {
         return;
     }
-    document.getElementById("SharedPopup").style.display = "block";
+    $("#SharedPopup").slideDown(0);
+    //document.getElementById("SharedPopup").style.display = "block";
     document.getElementById("content").contentWindow.location.href = a;
     });
 
-document.getElementById("ButtonShare")
-    .addEventListener("click", function e(){
+$("#SharedPopupClose").click(function a() {
+    $("#SharedPopup").hide("clip",{},1000)
+});
+
+$("#ButtonShare").click(function e(){
         const url = new URL(window.location.href);
         url.searchParams.set("sharedpage", document.getElementById("content").contentWindow.location.pathname);
-        document.getElementById("ButtonShare").innerHTML = "COPIED!";
+        $("#ButtonShare").text("COPIED!");
 
         setTimeout(function e(){
-            document.getElementById("ButtonShare").innerHTML = "SHARE PAGE";
+            $("#ButtonShare").text("SHARE PAGE");
         },1000);
         navigator.clipboard.writeText(url.toString())
             .catch(() => {
-                document.getElementById("ButtonShare").innerHTML = "FAILED TO COPY";
+                $("#ButtonShare").text("FAILED TO COPY");
                 setTimeout(function e(){
-                    document.getElementById("ButtonShare").innerHTML = "SHARE PAGE";
+                    $("#ButtonShare").text("SHARE PAGE");
                 },1000);
             });
 });
+
+$("#SharedPopup").hide(0);

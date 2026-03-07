@@ -4,25 +4,66 @@
     <meta charset="UTF-8">
     <title>TEST</title>
   <link rel="stylesheet" type="text/css" href="PageStyle.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <style>
+        #search{
+            width:100%;
+            background-color: #333;
+            color:#fff;
+            text-align: center;
+        }
+    </style>
 </head>
-<body>
+<body onload="LoadArticles();">
 <h1>ARTICLES</h1>
 <hr>
-<table>
-  <tr>
-    <td>Selecting an Engine</td>
-    <td><button onclick="ChangePage('selecting-an-engine.html');">READ</button></td>
-  </tr>
-    <tr>
-        <td>Lightmap Implementation</td>
-        <td><button onclick="ChangePage('lightmap-implementation.html');">READ</button></td>
-    </tr>
+<input id="search" placeholder="FIND ARTICLE">
+<table id="articles">
 </table>
 
 </body>
 <script>
+
+    let Articles=[
+        {title:"Selecting an Engine",url:"selecting-an-engine.html",search:"gamedev select engine unreal unity godot c++ cpp"},
+        {title:"Lightmap Implementation",url:"lightmap-implementation.html",search:"gamedev engine lightmap luxel texture level shadows custom pixel c++ cpp"},
+    ];
+
   function ChangePage(page){
     window.location.replace(page);
   }
+
+  function TableTemplate(name,link){
+      return "<tr>\n" +
+      "    <td>"+name+"</td>\n" +
+      "    <td><button onclick=\"ChangePage('"+link+"');\">READ</button></td>\n" +
+      "  </tr>";
+  }
+  function LoadArticles(){
+
+      for (let i=0;i<Articles.length;i++) {
+          $("#articles").append(TableTemplate(Articles[i].title, Articles[i].url));
+      }
+  }
+  $("#search").on("change keyup paste",function (){
+      $("#articles").html("");
+      let Search = $("#search").val();
+      Search = Search.trim().toLowerCase();
+      let SearchArr = Search.split(" ");
+     if(Search == "") {LoadArticles();return;}
+
+      for (let i=0;i<Articles.length;i++) {
+          let matches = 0;
+          for (let j=0;j<SearchArr.length;j++) {
+              if(Articles[i].search.includes(SearchArr[j])){
+                  matches++;
+              }
+          }
+          if(matches == SearchArr.length){
+              $("#articles").append(TableTemplate(Articles[i].title, Articles[i].url));
+          }
+      }
+  });
 </script>
 </html>
