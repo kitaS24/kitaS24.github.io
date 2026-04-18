@@ -83,6 +83,9 @@ $("#ButtonLinksClose").click(function e(){
 $("#ButtonMyArticles").click(function e(){
         document.getElementById("content").src = "pages/articles/all_articles.html";
     });
+$("#ButtonJsGames").click(function e(){
+    document.getElementById("content").src = "pages/games/all_games.html";
+});
 
 // history
 let History=[];
@@ -116,6 +119,7 @@ window.addEventListener("load", function e(){
     if (
         !a ||
         !a.startsWith("/pages/") ||
+        !a.startsWith("/games/") ||
         a.includes("://") ||
         a.includes("..")
     ) {

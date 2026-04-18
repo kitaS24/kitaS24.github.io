@@ -1,0 +1,38 @@
+
+
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <link href="style.css" rel="stylesheet">
+    <title></title>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://code.jquery.com/ui/1.14.2/jquery-ui.js"></script>
+
+</head>
+<body>
+<h1>move with "W" and "S"</h1><button id="btn-reset">RESTART</button>
+    <h1 id="g">GAME OVER!</h1>
+    <div id="diff-box">
+        <span>increase difficulty</span><input type="checkbox" id="flag-diff"><br>
+        <sub>this increases precision of the CPU paddle</sub>
+        <hr>
+        <span>increase difficulty</span><input type="checkbox" id="flag-bs"><br>
+        <sub>this increases ball speed</sub>
+        <hr>
+        <span>spring-like paddles</span><input type="checkbox" id="flag-hooke"><br>
+        <sub>paddles with Hooke's law</sub>
+        <hr>
+        <span>gravity</span><input type="checkbox" id="flag-g"><br>
+        <sub>9.8m/s</sub>
+        <hr>
+        <span>balls:</span><input value="1" min="1" max="500" type="number"id="val-bn"><br>
+        <sub>number of balls in the field. Changes will apply after restart</sub>
+
+    </div>
+    <canvas id="canvas" width="512" height="512" ></canvas>
+    
+</body>
+<script type="text/javascript" src="js.js"></script>
+</html>

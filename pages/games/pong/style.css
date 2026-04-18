@@ -1,0 +1,62 @@
+body{
+
+    background:#111;
+
+}
+
+h1{
+    color:#fff;
+    position: absolute;
+    right:16px;
+    bottom:32px;
+}
+
+#g{
+    bottom:128px;
+}
+span{
+    color:#fff;
+}
+sub{
+    color:#fff;
+}
+#diff-box{
+    position: absolute;
+    left:16px;
+    bottom:32px;
+    background-color: #fff1;
+}
+
+//stackoverflow
+canvas, img {
+    image-rendering: crisp-edges;
+    -ms-interpolation-mode: nearest-neighbor;
+
+
+}
+
+  #canvas{
+      position: absolute;
+      left:16px;
+      top:16px;
+
+      width:512px;
+      height:512px;
+  }
+
+  #btn-reset{
+      position: absolute;
+      left:16px;
+      top:528px;
+      color:#fff;
+      background-color: #0000;
+      border: none;
+  }
+#btn-reset:hover{
+    position: absolute;
+    left:16px;
+    top:528px;
+    color:#aaa;
+    background-color: #0000;
+    border: none;
+}

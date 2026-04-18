@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>All Games</title>
+  <link rel="stylesheet" type="text/css" href="PageStyle.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <style>
+    #search{
+      width:100%;
+      background-color: #333;
+      color:#fff;
+      text-align: center;
+    }
+  </style>
+</head>
+<body onload="LoadArticles();">
+<h1>GAMES</h1>
+<hr>
+<input id="search" placeholder="FIND GAMES">
+<table id="articles">
+</table>
+
+</body>
+<script>
+
+  let Articles=[
+    {title:"PONG",url:"pong/index.html",search:"pong 2d singleplayer cpu"},
+
+  ];
+
+  function ChangePage(page){
+    window.location.replace(page);
+  }
+
+  function TableTemplate(name,link){
+    return "<tr>\n" +
+            "    <td>"+name+"</td>\n" +
+            "    <td><button onclick=\"ChangePage('"+link+"');\">OPEN</button></td>\n" +
+            "  </tr>";
+  }
+  function LoadArticles(){
+
+    for (let i=0;i<Articles.length;i++) {
+      $("#articles").append(TableTemplate(Articles[i].title, Articles[i].url));
+    }
+  }
+  $("#search").on("change keyup paste",function (){
+    $("#articles").html("");
+    let Search = $("#search").val();
+    Search = Search.trim().toLowerCase();
+    let SearchArr = Search.split(" ");
+    if(Search == "") {LoadArticles();return;}
+
+    for (let i=0;i<Articles.length;i++) {
+      let matches = 0;
+      for (let j=0;j<SearchArr.length;j++) {
+        if(Articles[i].search.includes(SearchArr[j])){
+          matches++;
+        }
+      }
+      if(matches == SearchArr.length){
+        $("#articles").append(TableTemplate(Articles[i].title, Articles[i].url));
+      }
+    }
+  });
+</script>
+</html>
