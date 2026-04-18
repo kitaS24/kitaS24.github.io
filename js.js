@@ -119,7 +119,6 @@ window.addEventListener("load", function e(){
     if (
         !a ||
         !a.startsWith("/pages/") ||
-        !a.startsWith("/games/") ||
         a.includes("://") ||
         a.includes("..")
     ) {
