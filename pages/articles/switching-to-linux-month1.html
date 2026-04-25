@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Switching to Linux. First Month</title>
+  <link rel="stylesheet" type="text/css" href="PageStyle.css">
+</head>
+<body>
+<h1>Switching to Linux. First Month</h1>
+<hr>
+<span>center text:</span><input id="UserChangeWidth" type="checkbox">
+<div id="Content">
+  <h2>The Start</h2>
+  <p>I was using Windows before trying out Linux. I was thinking about switching for a while, about half a year.
+  I can't really say what pushed me to switch to Linux. Maybe it was the Windows updates, Copilot, maybe I was just
+    tired of using Windows. About a month before the switch I have downloaded the ISO and rufus. I have to say that
+    I haven't done enough research before picking a distribution.</p>
+  <p>
+    At the start I chose between three distribution. Ubuntu, Kali and Arch. I had used Ubuntu before, and this
+    time I have decided not to. I was thinking that Arch was too complicated for me. So, because I haven't done enough
+    research, it left me with Kali. Before setting it up on my main PC, I made sure that most of the apps that I need work on
+    Kali. I tested them in a VM. After ensuring that everything works, it was time to put it on my main PC. It took
+    some time. At that time I have figured out that it was better to use Balena Etcher. Also, I have decided to dual-boot
+    Kali with Windows.
+  </p>
+  <p>
+    While trying to install Kali, I ran into the problem where I could not start the installation process with my GPU. I
+    had to disable it in UEFI. This took 3 hours to figure out. That was the only issue. After the installation process,
+    I could switch back to my GPU, and it would work.
+  </p>
+  <h2>First Week</h2>
+  <p>
+    During the first week I was mainly installing apps I use, sometimes figuring out the alternatives. First apps I
+    installed were Steam and Discord. I had no issues with Discord, but I had some issues with Steam. It took about 1 hour to
+    resolve the issue with Steam. During the first week I had a problem where sometimes my computer would boot
+    without user interface. I am not sure what caused it, but I haven't seen that happen later.
+  </p>
+  <p>
+    I wasn't customizing a lot during the first week. The only things changed were the task bar and the monospaced font.
+    Overall, the first week went pretty smoothly. While I had a few problems, they were easily fixable.
+  </p>
+  <h2>Second Week</h2>
+  <p>
+    I can't really say a lot about the second week. The main thing that I did, were fixing desktop shortcuts and doing some
+    customization. When talking about customization I only have installed fastfetch, as well as, changed the theme
+    to a bit darker one. The second week was also the time when I felt that OS was not limiting me. Windows usually does
+    limit the user in many ways, here I felt that my computer was doing exactly what I told it to do. And it
+    was freeing.
+  </p>
+  <h2>Third and Fourth Week</h2>
+  <p>During the third week, I was installing apps that I figured out I needed. The main ones were: LibreOffice,
+    SpeedCrunch and VLC. On the fourth week I was going away from LLM providers like OpenAI, the main push for that was
+  that they needed to make sure that I was signed in, before being able to use a said LLM. This is when I was starting
+    to look into the ways that can allow me to run LLMs locally. Right now I still try to set everything up the way I
+    like it. And the main focus for me was LLM average.</p>
+  <h2>Gaming on Linux</h2>
+  <p>Gaming on Linux is straightforward. It works out of the box with Steam. Valve was developing Proton,
+  and that allows you to easily run games on Linux. Especially single-player games. Also, Wine exists. Wine
+    is a compatibility layer capable of running Windows applications on Linux, macOS.</p>
+  <h2>Conclusion</h2>
+  <p>After using Kali Linux for a month I can say that while Kali isn't that popular for gaming or everyday tasks, it
+  can still do that without any problems. This shows that if the distribution is made mainly for everyday use, there
+  probably will not be a lot of problems with it. Linux is pretty stable, way more stable than Windows. There is no auto
+    updating or Copilot. I haven't had any major issues with Linux during the first month. Things broke when I broke
+    them, or couldn't find the right solution.</p>
+  <p>
+    Right now I think that I will keep using Linux. I'm not sure for how long, but probably at least for
+    another month. I will probably switch back to Windows if:</p>
+    <ul>
+    <li>I am forced to switch</li>
+    <li>There is some software that I must use all the time that is Windows-only</li>
+    </ul>
+  <p>
+    Due to this being the first month using Linux, I am not sure if I will pick another distribution,
+    or if I will switch back to Windows.
+  </p>
+  <br/><br/>
+</div>
+
+</body>
+
+<script>
+  document.getElementById("UserChangeWidth")
+          .addEventListener("click", function e(){
+            if(document.getElementById("UserChangeWidth").checked){
+              document.getElementById("Content").style.width = "70ch";
+              document.getElementById("Content").style.marginLeft = "auto";
+              document.getElementById("Content").style.marginRight = "auto";
+            }else{
+              document.getElementById("Content").style.width = "100%";
+              document.getElementById("Content").style.marginLeft = "0";
+              document.getElementById("Content").style.marginRight = "0";
+            }
+          });
+</script>
+</html>
