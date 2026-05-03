@@ -1,0 +1,131 @@
+body{
+    background-image: url("bgs/xfce-verticals.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    height:100%;
+
+    background-color: #000;
+
+    width: 100vw;
+    height: 100vh;
+
+    overflow: clip;
+}
+.kali{
+    background-image: url("bgs/kali-tiles-16x9.jpg");
+}
+.ubuntu{
+    background-image: url("bgs/ubuntu.png");
+}
+.xfce2{
+    background-image: url("bgs/xfce-teal.svg");
+}
+.kali2{
+    background-image: url("bgs/kali-cubes2-16x9.jpg");
+}
+.icon-file{
+    position: absolute;
+    width:5.3vw;
+    height:5.3vw;
+
+    background-image: url("icons/application.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.icon-exe{
+    position: absolute;
+    width:5.3vw;
+    height:5.3vw;
+
+    background-image: url("icons/application-executable.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.icon-folder-d{
+    position: absolute;
+    width:5.3vw;
+    height:5.3vw;
+
+    background-image: url("icons/folder-blue-documents.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.icon-folder-git{
+    position: absolute;
+    width:5.3vw;
+    height:5.3vw;
+
+    background-image: url("icons/folder-blue-git.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#taskbar{
+    position: absolute;
+    width:100vw;
+    height:2vw;
+
+    left:0px;
+    top:0px;
+
+    background-color: #0005;
+}
+
+.filetext{
+    position: inherit;
+    left:0px;
+    bottom:-0.7vw;
+    text-align: center;
+    width:5.3vw;
+    margin-bottom: 0px;
+    color:#fff;
+
+}
+
+.window-div{
+    position: absolute;
+    /*width:75vw;
+    height:75vh;*/
+
+    background-color: #333;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 5px 15px;
+}
+.window{
+    position: inherit;
+    left:0px;
+    top:20px;
+
+    /*width:75vw;
+    height:73vh;
+     */
+
+    width:100%;
+    height:97.5%;
+
+    border: #0000;
+
+}
+
+.winclosebtn{
+    position: inherit;
+    right:0px;
+    background-color: #0000;
+    border: #0000;
+    color: #fff;
+}
+
+.winclosebtn:hover{
+    color: #999;
+}
+
+
+.ui-resizable-handle {
+    background: rgba(255, 255, 0, 0.05) !important; /* Red tint so you can see them */
+    width: 20px;
+    height: 20px;
+
+    position: inherit;
+    right:0px;
+    bottom: 0px;
+}

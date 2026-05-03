@@ -87,6 +87,10 @@ $("#ButtonJsGames").click(function e(){
     document.getElementById("content").src = "pages/games/all_games.html";
 });
 
+$("#ButtonLinux").click(function e(){
+    window.location.replace("index2.html");
+});
+
 // history
 let History=[];
 
