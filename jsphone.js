@@ -24,7 +24,7 @@ function FullscreenBlur(val){
     }
 }
 
-/*function UpdateSelectPanel(){
+function UpdateSelectPanel(){
     let Delta=1/60;
     if(SelectPanel) {
         PanelPos += Delta*1.6;
@@ -40,8 +40,8 @@ function FullscreenBlur(val){
     if(a <-1){a=-1;}
     document.getElementById("content").style.left = a*20+25+"%";
 }
-*/
-//setInterval(UpdateSelectPanel,1000/60);
+
+setInterval(UpdateSelectPanel,1000/60);
 
 $("#headPopup").mouseover( function e(){SelectPanel = true;IgnoreTouchscreen=true;});
 document.getElementById("headPopup").addEventListener("mouseout", function e(){SelectPanel = false;});
@@ -61,28 +61,28 @@ document.getElementById("headPopupOpenClose")
 //menu buttons
 
 $("#ButtonHome").click(function e(){
-        document.getElementById("content").src = "pages/home.html";
-    });
+    document.getElementById("content").src = "pages/home.html";
+});
 $("#ButtonAboutMe").click(function e(){
-        document.getElementById("content").src = "pages/about.html";
-    });
+    document.getElementById("content").src = "pages/about.html";
+});
 $("#ButtonMyProjects").click(function e(){
-        window.location.replace("pages/projects.html");
-    });
+    window.location.replace("pages/projects.html");
+});
 $("#ButtonMyPages").click(function e(){
-        document.getElementById("content").src = "pages/pages.html";
-    });
+    document.getElementById("content").src = "pages/pages.html";
+});
 $("#ButtonLinks").click(function e(){
-        FullscreenBlur(true);
-        document.getElementById("InfoLinks").style.top = "50%";
-    });
+    FullscreenBlur(true);
+    document.getElementById("InfoLinks").style.top = "50%";
+});
 $("#ButtonLinksClose").click(function e(){
-        FullscreenBlur(false);
-        document.getElementById("InfoLinks").style.top = "150%";
-    });
+    FullscreenBlur(false);
+    document.getElementById("InfoLinks").style.top = "150%";
+});
 $("#ButtonMyArticles").click(function e(){
-        document.getElementById("content").src = "pages/articles/all_articles.html";
-    });
+    document.getElementById("content").src = "pages/articles/all_articles.html";
+});
 $("#ButtonJsGames").click(function e(){
     document.getElementById("content").src = "pages/games/all_games.html";
 });
@@ -105,12 +105,12 @@ setInterval(function e(){
 
 $("#ButtonBack").click(function e(){
     $("#ButtonBack").prop("disabled",History.length<=1);
-        if(!$("#ButtonBack").prop("disabled")){
-            History.pop();
-            document.getElementById("content").contentWindow.location.href =History[History.length-1];
-        }
+    if(!$("#ButtonBack").prop("disabled")){
+        History.pop();
+        document.getElementById("content").contentWindow.location.href =History[History.length-1];
+    }
     $("#ButtonBack").prop("disabled", History.length<=1);
-    });
+});
 
 
 
@@ -131,51 +131,27 @@ window.addEventListener("load", function e(){
     $("#SharedPopup").slideDown(0);
     //document.getElementById("SharedPopup").style.display = "block";
     document.getElementById("content").contentWindow.location.href = a;
-    });
+});
 
 $("#SharedPopupClose").click(function a() {
     $("#SharedPopup").hide("clip",{},1000)
 });
 
 $("#ButtonShare").click(function e(){
-        const url = new URL(window.location.href);
-        url.searchParams.set("sharedpage", document.getElementById("content").contentWindow.location.pathname);
-        $("#ButtonShare").text("COPIED!");
+    const url = new URL(window.location.href);
+    url.searchParams.set("sharedpage", document.getElementById("content").contentWindow.location.pathname);
+    $("#ButtonShare").text("COPIED!");
 
-        setTimeout(function e(){
-            $("#ButtonShare").text("SHARE PAGE");
-        },1000);
-        navigator.clipboard.writeText(url.toString())
-            .catch(() => {
-                $("#ButtonShare").text("FAILED TO COPY");
-                setTimeout(function e(){
-                    $("#ButtonShare").text("SHARE PAGE");
-                },1000);
-            });
+    setTimeout(function e(){
+        $("#ButtonShare").text("SHARE PAGE");
+    },1000);
+    navigator.clipboard.writeText(url.toString())
+        .catch(() => {
+            $("#ButtonShare").text("FAILED TO COPY");
+            setTimeout(function e(){
+                $("#ButtonShare").text("SHARE PAGE");
+            },1000);
+        });
 });
 
 $("#SharedPopup").hide(0);
-
-function detectMob() {
-    const toMatch = [
-        /Android/i,
-        /webOS/i,
-        /iPhone/i,
-        /iPad/i,
-        /iPod/i,
-        /BlackBerry/i,
-        /Windows Phone/i
-    ];
-
-    return toMatch.some((toMatchItem) => {
-        return navigator.userAgent.match(toMatchItem);
-    });
-}
-
-function detectMob2() {
-    return ( ( window.innerWidth <= 800 ) && ( window.innerHeight <= 600 ) );
-}
-
-if(detectMob() || detectMob2()){
-    window.location.replace("indexphone.html");
-}
