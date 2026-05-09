@@ -17,6 +17,8 @@ function easeInOutBack(x) {
 }
 
 function FullscreenBlur(val){
+    return;
+    //no blur here
     if(val) {
         document.getElementById("fullscreenBlur").style.opacity = "1";
     }else{
@@ -84,7 +86,7 @@ $("#ButtonMyArticles").click(function e(){
         document.getElementById("content").src = "pages/articles/all_articles.html";
     });
 $("#ButtonJsGames").click(function e(){
-    document.getElementById("content").src = "pages/games/all_games.html";
+    window.location.href = "pages/games/all_games.html";
 });
 
 $("#ButtonLinux").click(function e(){

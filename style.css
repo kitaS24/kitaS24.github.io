@@ -3,6 +3,8 @@ body{
     overflow-y: hidden;
     background-color: #223;
     height:100%;
+
+    background-image: url("bgs/bg.gif");
 }
 html{
     overflow-x: hidden;
@@ -12,12 +14,12 @@ html{
 
 #headPopup{
 
-    position: absolute;
+    position: relative;
     top:0;
     left:0;
 
-    width:256px;
-    height:100%;
+    width:128px;
+    height:600px;
     background-color: #335;
 
     /*border-radius: 5px 30px 30px 5px;*/
@@ -26,8 +28,8 @@ html{
 .headPopupBtn{
 
     display:block;
-    width:256px;
-    height:64px;
+    width:128px;
+    height:32px;
     border:0px;
 
     background:none;
@@ -53,12 +55,12 @@ html{
     -ms-interpolation-mode: nearest-neighbor;
 }
 
-#ButtonAboutMe{background-position: 0 -64px;}
-#ButtonMyProjects{background-position: 0 -128px;}
-#ButtonMyArticles{background-position: 0 -192px;}
-#ButtonJsGames{background-position: 0 -256px;}
-#ButtonLinks{background-position: 0 -320px;}
-#ButtonLinux{background-position: 0 -384px;}
+#ButtonAboutMe{background-position: 0 -32px;}
+#ButtonMyProjects{background-position: 0 -64px;}
+#ButtonMyArticles{background-position: 0 -96px;}
+#ButtonJsGames{background-position: 0 -128px;}
+#ButtonLinks{background-position: 0 -160px;}
+#ButtonLinux{background-position: 0 -192px;}
 
 #headPopupOpenClose{
     position:absolute;
@@ -80,21 +82,22 @@ html{
 }
 
 #content{
-    position: absolute;
+    border: none;
+    position: relative;
     top:0;
     right:0;
     overflow-y: auto;
 
-    width:calc(100% - 256px);
-    height:100%;
+    width:calc(800px - 128px);
+    height:600px;
     background-color: #777;
 
 }
 
 #ButtonBack{
     position: absolute;
-    top:8px;
-    right:8px;
+    top:12px;
+    right:calc(( 100% - 800px) / 2 + 4px);
     border: none;
 
     width:128px;
@@ -141,19 +144,15 @@ html{
     position: absolute;
     left: 50%;
     top: 150%;
-    transition: 1s;
+    /*transition: 1s;*/
 
     width: clamp(200px, 40vmin, 600px);
     height: clamp(200px, 40vmin, 600px);
 
     transform: translate(-50%, -50%);
+    box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
 
-    /* From https://css.glass */
-    background: rgba(172, 172, 172, 0.39);
-    border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(14.9px);
-    -webkit-backdrop-filter: blur(14.9px);
+    background-image: url("bgs/bg2.gif");
 }
 
 .Link{
@@ -180,44 +179,22 @@ html{
 
 #ButtonLinksClose{
     position: relative;
-    left: 20%;
+    left: calc(50% - 64px);
     top: 30%;
 
-    width:60%;
-    height:10%;
+    width:128px;
+    height:32px;
 
     transition: 0.5s;
 
-    /* From https://css.glass */
-    background: rgba(0, 0, 0, 0.35);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(6.1px);
-    -webkit-backdrop-filter: blur(6.1px);
-    border: 1px solid rgba(0, 0, 0, 0.19);
-}
-
-#ButtonLinksClose:hover{
-    /* From https://css.glass */
-    background: rgba(9, 9, 81, 0.35);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(6.1px);
-    -webkit-backdrop-filter: blur(6.1px);
-    border: 1px solid rgba(9, 9, 81, 0.19);
-}
-
-#ButtonLinksClose:active{
-    /* From https://css.glass */
-    background: rgba(0, 0, 255, 0.35);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(6.1px);
-    -webkit-backdrop-filter: blur(6.1px);
-    border: 1px solid rgba(0, 0, 255, 0.19);
+    background-image: url("icons/close.gif");
+    border: none;
 }
 
 #ButtonShare{
     position: absolute;
-    bottom:11px;
-    right:5px;
+    top:calc(604px - 32px);
+    right:calc(( 100% - 800px) / 2 + 4px);
     border:0;
     background-color: #14a2dd;
     color:#000;
@@ -226,9 +203,13 @@ html{
     width:128px;
     height:32px;
 
-    background-image: url("icons/sharebtn.gif");
+    background-image: url("icons/sharebtna.gif");
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+#ButtonShare:hover{
+    background-image: url("icons/sharebtn.gif");
 }
 
 #SharedPopup{
@@ -261,3 +242,14 @@ html{
     bottom: 2px;
     border-radius: 2px;
 }*/
+
+
+#main{
+    margin: auto;
+    align-items: center;
+    width:800px;
+    height:600px;
+    display: flex;
+
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}

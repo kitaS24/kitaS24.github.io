@@ -1,0 +1,78 @@
+body{
+
+    /*background-color:#eee;*/
+    background-image: url("../../../bgs/bg2.gif");
+}
+
+.dead{
+    transition: 1.5s;
+    background-color: #f33;
+    background-blend-mode: multiply;
+}
+table{
+    padding:0;
+}
+td{
+    border: none #0000;
+    padding:0;
+    box-sizing: border-box;
+    background-image: url("res/c.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    width:32px;
+    height: 32px;
+}
+
+.FreeSpace{
+    border: none;
+    background-image: url("res/ce.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.BSpace{
+    border: none;
+    background-image: url("res/b.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.BSpaceC{
+    border: none;
+    background-image: url("res/bc.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.flag{
+    border: none;
+    background-image: url("res/f.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.n1{color:#00f;}
+.n2{color:#0f0;}
+.n3{color:#f00;}
+.n4{color:#00007b;}
+.n5{color:#7b0000;}
+.n6{color:#007b7b;}
+.n7{color:#000;}
+.n8{color:#7b7b7b;}
+
+span{
+    display: table;
+    margin: 0 auto;
+}
+
+#ui{
+    width:1022px;
+    height: 100px;
+    background-color: #666;
+}
+
+#main{
+    margin: auto;
+    align-items: center;
+
+    width:1030px;
+}

@@ -10,10 +10,8 @@
 </head>
 <body>
 
+<div id="main">
 
-<iframe id="content" src="pages/home.html">
-
-</iframe>
 <div id="headPopup" >
     <button class="headPopupBtn" id="ButtonHome"></button>
     <button class="headPopupBtn" id="ButtonAboutMe"></button>
@@ -25,18 +23,22 @@
     <button class="headPopupBtn" id="ButtonLinux"></button>
     <button id="headPopupOpenClose" style="display: none;"><></button>
 </div>
+    <iframe id="content" src="pages/home.html">
 
-<button id="ButtonBack" disabled></button>
-<button id="ButtonShare"></button>
-<div id="SharedPopup"><strong>Shared link: the site owner is not responsible for content.</strong><button id="SharedPopupClose">X</button></div>
+    </iframe>
 
 <div id="fullscreenBlur"></div>
 <div id="InfoLinks">
     <div id="InfoLinksCenter">
         <button class="Link" id="ButtonLinkGit" onclick="window.open('https://github.com/kitaS24')"></button>
     </div>
-    <button id="ButtonLinksClose">CLOSE</button>
+    <button id="ButtonLinksClose"></button>
 </div>
+</div>
+
+<button id="ButtonBack" disabled></button>
+<button id="ButtonShare"></button>
+<div id="SharedPopup"><strong>Shared link: the site owner is not responsible for content.</strong><button id="SharedPopupClose">X</button></div>
 
 <script type="text/javascript" src="js.js" ></script>
 </body>
