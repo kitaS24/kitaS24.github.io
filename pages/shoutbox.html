@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SHOUTBOX</title>
+    <link rel="stylesheet" type="text/css" href="PageStyle.css">
+    <script src="https://iframe.chat/scripts/main.min.js"></script>
+    <style>
+        #1{
+            border-radius: 0px;
+            border: 0px none #0000;
+        }
+        #rules{
+            background-color:#335;
+            position: absolute;
+            right:4px;
+            top: calc(50% - 150px);
+            height:150px;
+            width:140px;
+            color:#fff;
+        }
+        #rules li{
+            color:#fff;
+        }
+    </style>
+    <script>
+    window.addEventListener("load", function(){
+        document.getElementById("1").contentWindow.postMessage(`
+      *{
+      border: 0px none #0000;
+      }
+      body {
+        border: none;
+        background-color:#0001;
+
+      }
+      #top_banner{
+      display:none;
+      }
+      #input{
+      border-radius:0px;
+      background-color:#335;
+      color:#fff;
+      }
+      #input:empty::before{
+      color:#fff7;
+      }
+       #emojiTrayToggle{
+      filter:invert();
+      }
+    `, "*");
+    });
+</script>
+</head>
+<body>
+    <iframe id="1" frameBorder="0" src="https://iframe.chat/embed?chat=34352610" id="chattable" height="590px" width="500px"></iframe>
+
+<div id="rules">
+    Rules:<br>
+    <ul>
+    <li><strong>Be Nice</strong></li>
+        <li><strong>Avoid politics</strong></li>
+        <li><strong>English Only</strong></li>
+        <li><strong>Keep it PG13</strong></li>
+    </ul>
+</div>
+
+</body>
+</html>

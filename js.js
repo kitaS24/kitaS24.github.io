@@ -69,7 +69,7 @@ $("#ButtonAboutMe").click(function e(){
         document.getElementById("content").src = "pages/about.html";
     });
 $("#ButtonMyProjects").click(function e(){
-        window.location.replace("pages/projects.html");
+    window.location.href = "pages/projects.html";
     });
 $("#ButtonMyPages").click(function e(){
         document.getElementById("content").src = "pages/pages.html";
@@ -90,7 +90,11 @@ $("#ButtonJsGames").click(function e(){
 });
 
 $("#ButtonLinux").click(function e(){
-    window.location.replace("index2.html");
+    window.location.href = "index2.html";
+});
+
+$("#ButtonShoutbox").click(function e(){
+    document.getElementById("content").src = "pages/shoutbox.html";
 });
 
 // history
@@ -142,16 +146,16 @@ $("#SharedPopupClose").click(function a() {
 $("#ButtonShare").click(function e(){
         const url = new URL(window.location.href);
         url.searchParams.set("sharedpage", document.getElementById("content").contentWindow.location.pathname);
-        $("#ButtonShare").text("COPIED!");
+        //$("#ButtonShare").text("COPIED!");
 
         setTimeout(function e(){
-            $("#ButtonShare").text("SHARE PAGE");
+            //$("#ButtonShare").text("SHARE PAGE");
         },1000);
         navigator.clipboard.writeText(url.toString())
             .catch(() => {
                 $("#ButtonShare").text("FAILED TO COPY");
                 setTimeout(function e(){
-                    $("#ButtonShare").text("SHARE PAGE");
+                    //$("#ButtonShare").text("SHARE PAGE");
                 },1000);
             });
 });
