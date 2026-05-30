@@ -63,6 +63,17 @@ html{
 #ButtonLinux{background-position: 0 -192px;}
 #ButtonShoutbox{background-position: 0 -224px;}
 
+#ButtonShoutbox{
+    background-image: url("icons/sitenav.gif");
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    image-rendering: -moz-crisp-edges;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+    -ms-interpolation-mode: nearest-neighbor;
+}
+
 #headPopupOpenClose{
     position:absolute;
     width:30px;

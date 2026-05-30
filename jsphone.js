@@ -90,6 +90,10 @@ $("#ButtonJsGames").click(function e(){
 $("#ButtonLinux").click(function e(){
     window.location.replace("index2.html");
 });
+/*
+$("#ButtonShoutbox").click(function e(){
+    document.getElementById("content").src = "pages/shoutbox.html";
+});*/
 
 // history
 let History=[];
