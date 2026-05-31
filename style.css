@@ -224,6 +224,10 @@ html{
     background-image: url("icons/sharebtn.gif");
 }
 
+#ButtonShare.CopyTrue {
+    background-image: url("icons/sharebtnb.gif") !important;
+}
+
 #SharedPopup{
     /*display:none;*/
     position: absolute;

@@ -8,6 +8,9 @@ h1{
     font-style: normal;
     color: #333355;
 }
+h1:hover{
+    color: #444466;
+}
 h2{
     font-family: "Bebas Neue", sans-serif;
     font-weight: 400;
@@ -36,7 +39,6 @@ p{
     font-weight: 400;
     font-style: normal;
     font-variation-settings: "wdth" 75;
-    font-size: 0.85em;
 }
 
 a{
@@ -123,4 +125,19 @@ img{
 
 #Content{
     position: relative;
+}
+
+button{
+    border-radius: 0px;
+    border: 3px outset;
+
+    background-color: #335;
+    color:#fff;
+    font-weight: bold;
+}
+button:hover{
+    border-radius: 0px;
+    border: 3px inset;
+
+    background-color: #2a2a4a;
 }

@@ -146,14 +146,14 @@ $("#SharedPopupClose").click(function a() {
 $("#ButtonShare").click(function e(){
         const url = new URL(window.location.href);
         url.searchParams.set("sharedpage", document.getElementById("content").contentWindow.location.pathname);
-        //$("#ButtonShare").text("COPIED!");
+        $("#ButtonShare").addClass("CopyTrue");
 
         setTimeout(function e(){
-            //$("#ButtonShare").text("SHARE PAGE");
+            $("#ButtonShare").removeClass("CopyTrue");
         },1000);
         navigator.clipboard.writeText(url.toString())
             .catch(() => {
-                $("#ButtonShare").text("FAILED TO COPY");
+                //$("#ButtonShare").text("FAILED TO COPY");
                 setTimeout(function e(){
                     //$("#ButtonShare").text("SHARE PAGE");
                 },1000);
