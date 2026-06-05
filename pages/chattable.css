@@ -1,0 +1,22 @@
+*{
+    border: 0px none #0000;
+}
+body {
+    border: none;
+    background-color:#0001;
+
+}
+#top_banner{
+    display:none;
+}
+#input{
+    border-radius:0px;
+    background-color:#335;
+    color:#fff;
+}
+#input:empty::before{
+    color:#fff7;
+}
+#emojiTrayToggle{
+    filter:invert();
+}
