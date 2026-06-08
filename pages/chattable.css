@@ -1,9 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=DotGothic16&display=swap');
+
+body, #top_banner, #input {
+    background: #0000;
+    color: #0F0;
+    /*font-family: console, monospace;*/
+    font-family: "DotGothic16", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+#input {
+    border-top: solid 1px #555;
+    border-radius: 0;
+}
+#input:empty:before {
+    color: #555;
+    content: "type a message...";
+}
+/*
+#settings {
+    filter: invert(100%);
+}*/
+.msgWrapper {
+    display: block;
+}
+.allMessages {
+    display: flex;
+}
+.senderInfo, .msgBody {
+    font-weight: lighter;
+    display: inline;
+}
+.senderInfo {
+    margin-right: 10px !important;
+    font-weight: bold;
+}
+.senderInfo:before {
+    content: "< ";
+}
+.senderInfo:after {
+    content: ">"
+}
+.verified_icon {
+    display: inline !important;
+}
+/*
+.allMessages[uid^='0'] { color: #FF5733; }
+.allMessages[uid^='1'] { color: #FFC107; }
+.allMessages[uid^='2'] { color: #4CAF50; }
+.allMessages[uid^='3'] { color: #2196F3; }
+.allMessages[uid^='4'] { color: #9C27B0; }
+.allMessages[uid^='5'] { color: #FF9800; }
+.allMessages[uid^='6'] { color: #009688; }
+.allMessages[uid^='7'] { color: #E91E63; }
+.allMessages[uid^='8'] { color: #607D8B; }
+.allMessages[uid^='9'] { color: #795548; }
+.allMessages[uid^='a'] { color: #F4BB33; }
+.allMessages[uid^='b'] { color: #FF4081; }
+.allMessages[uid^='c'] { color: #00BCD4; }
+.allMessages[uid^='d'] { color: #8BC34A; }
+.allMessages[uid^='e'] { color: #673AB7; }
+.allMessages[uid^='f'] { color: #FF5722; }
+.allMessages[uid^='g'] { color: #4CAF50; }
+.allMessages[uid^='h'] { color: #3F51B5; }
+.allMessages[uid^='i'] { color: #CDDC39; }
+.allMessages[uid^='j'] { color: #FFEB3B; }
+.allMessages[uid^='k'] { color: #0097A7; }
+.allMessages[uid^='l'] { color: #D81B60; }
+.allMessages[uid^='m'] { color: #4DB6AC; }
+.allMessages[uid^='n'] { color: #7B1FA2; }
+.allMessages[uid^='o'] { color: #FBC02D; }
+.allMessages[uid^='p'] { color: #0288D1; }
+.allMessages[uid^='q'] { color: #689F38; }
+.allMessages[uid^='r'] { color: #D32F2F; }
+.allMessages[uid^='s'] { color: #1976D2; }
+.allMessages[uid^='t'] { color: #388E3C; }
+.allMessages[uid^='u'] { color: #F06292; }
+.allMessages[uid^='v'] { color: #455A64; }
+.allMessages[uid^='w'] { color: #F57C00; }
+.allMessages[uid^='x'] { color: #26A69A; }
+.allMessages[uid^='y'] { color: #AB47BC; }
+.allMessages[uid^='z'] { color: #FFCA28; }
+.allMessages[uid^='A'] { color: #FF6F61; }
+.allMessages[uid^='B'] { color: #FFD700; }
+.allMessages[uid^='C'] { color: #00E676; }
+.allMessages[uid^='D'] { color: #0288D1; }
+.allMessages[uid^='E'] { color: #8E24AA; }
+.allMessages[uid^='F'] { color: #FF8A65; }
+.allMessages[uid^='G'] { color: #26C6DA; }
+.allMessages[uid^='H'] { color: #AD1457; }
+.allMessages[uid^='I'] { color: #AEEA00; }
+.allMessages[uid^='J'] { color: #FFAB00; }
+.allMessages[uid^='K'] { color: #00ACC1; }
+.allMessages[uid^='L'] { color: #EC407A; }
+.allMessages[uid^='M'] { color: #26A69A; }
+.allMessages[uid^='N'] { color: #5E35B1; }
+.allMessages[uid^='O'] { color: #FFA726; }
+.allMessages[uid^='P'] { color: #039BE5; }
+.allMessages[uid^='Q'] { color: #7CB342; }
+.allMessages[uid^='R'] { color: #C62828; }
+.allMessages[uid^='S'] { color: #1565C0; }
+.allMessages[uid^='T'] { color: #2E7D32; }
+.allMessages[uid^='U'] { color: #F06292; }
+.allMessages[uid^='V'] { color: #37474F; }
+.allMessages[uid^='W'] { color: #EF6C00; }
+.allMessages[uid^='X'] { color: #00897B; }
+.allMessages[uid^='Y'] { color: #8E24AA; }
+.allMessages[uid^='Z'] { color: #FFB300; }
+*/
+
+.allMessages { color: #111; }
+
+.sent {
+    color: #2f2 !important;
+    font-weight: bolder;
+}
+#timestamp {
+    display: none;
+}
+.allMessages:after {
+    display:none;
+    content: attr(time);
+    color: #555;
+    float: right;
+    margin-left: 10px;
+    font-size: 8pt;
+}
+/*
+#emojiTray, #emojiTrayToggle {
+    display: none !important;
+}
+*/
 *{
     border: 0px none #0000;
+
+    font-family: "DotGothic16", sans-serif;
+    font-weight: 400;
+    font-style: normal;
 }
 body {
     border: none;
     background-color:#0001;
+
 
 }
 #top_banner{
@@ -20,3 +157,15 @@ body {
 #emojiTrayToggle{
     filter:invert();
 }
+
+#emojiTray>h3{
+    color:#000;
+}
+
+#emojiTray{
+    background-color: #0000;
+}
+/*
+.emoji{
+    background-color: #fff7;
+}*/
