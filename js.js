@@ -185,3 +185,51 @@ function detectMob2() {
 if(detectMob() || detectMob2()){
     window.location.replace("indexphone.html");
 }
+
+{
+    let Arr = [
+        "The grass is the greenest wherever you water it",
+        "Online since Feb 2026",
+        "Rolled back 30 years",
+        "It just works",
+        "No AI!",
+        "No Microsoft bloat",
+        "No Copilot",
+        "No ADS",
+        "No installation needed",
+        "Truly MySpace",
+        "IRC IRC IRC",
+        "https://noai.duckduckgo.com/",
+        "Even Microsoft uses Linux",
+        "AI is expensive, so don't use it",
+        "Check it out!",
+        "sudo apt upgrade",
+        "Valve",
+        "10 HOME <br> 20 SWEET <br> 30 GOTO 10",
+        "Google, I am not a robot",
+        "Aperture Science, we do what we must because we can",
+        "It just works, without a Microsoft account",
+        "sv_cheats 1",
+        "HALF-LIFE",
+        "undefined?",
+        "null?",
+        "0x48 0x65 0x6C 0x6C 0x6F 0x2C 0x20 0x57 0x6F 0x72 0x6C 0x64 0x21",
+        "Crowbar",
+        "C++",
+        "OpenGL",
+
+
+    ];
+
+    let x = Math.floor(Math.random() * Arr.length);
+    //let x = Arr.length-1;
+
+    $("#head-scroll").html(Arr[x]);
+    if(Arr[x] == "10 HOME <br> 20 SWEET <br> 30 GOTO 10") {
+        $("#head-scroll").css("font-size", "6px");
+        $("#head-scroll").css("font-weight", "bold");
+    }
+    if(Arr[x] == "HALF-LIFE") {
+        $("#head-scroll").css("color", "#fb7e14");
+    }
+}
