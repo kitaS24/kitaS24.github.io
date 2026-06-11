@@ -1,6 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wdth,wght@0,75,100..900;1,75,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Prata&display=swap');
+
+@font-face {
+    font-family: SegmentFont16;
+    src: url(../../fonts/16Segments-Background.woff);
+}
 body{background-color: #999;}
 h1{
     font-family: "Bebas Neue", sans-serif;
@@ -140,4 +145,20 @@ button:hover{
     border: 3px inset;
 
     background-color: #2a2a4a;
+}
+
+.date{
+    color:#fff;
+    background-color: #000;
+    font-weight: bold;
+    font-family: SegmentFont16;
+    filter: hue-rotate(240deg) brightness(170%);
+    padding-top: 8px;padding-right: 8px;padding-bottom: 8px;padding-left: 8px;
+}
+.date:hover{
+    filter: hue-rotate(240deg) brightness(200%);
+}
+
+.header{
+    margin-bottom: 0px;
 }

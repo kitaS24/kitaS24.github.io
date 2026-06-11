@@ -204,10 +204,8 @@ if(detectMob() || detectMob2()){
         "AI is expensive, so don't use it",
         "Check it out!",
         "sudo apt upgrade",
-        "Valve",
         "10 HOME <br> 20 SWEET <br> 30 GOTO 10",
         "Google, I am not a robot",
-        "Aperture Science, we do what we must because we can",
         "It just works, without a Microsoft account",
         "sv_cheats 1",
         "HALF-LIFE",
@@ -217,11 +215,31 @@ if(detectMob() || detectMob2()){
         "Crowbar",
         "C++",
         "OpenGL",
+        "It starts with...",
+        "But in the end, it doesn't even matter",
+        "Can it run Doom?",
+        "Fix 1 bug, get 20 new instead",
+        "This message changes with each page load",
 
 
     ];
 
-    let x = Math.floor(Math.random() * Arr.length);
+    let LastIndexes = [];
+    if(localStorage.getItem("msgs") != null){
+        LastIndexes =JSON.parse(localStorage.getItem("msgs"));
+    }
+    console.log(LastIndexes);
+    if(LastIndexes.length >15){
+        LastIndexes.shift();
+    }
+
+    let x = -1;
+    while(x ==-1 || LastIndexes.includes(x)) {
+        x = Math.floor(Math.random() * Arr.length);
+    }
+
+    LastIndexes.push(x);
+    localStorage.setItem("msgs",JSON.stringify(LastIndexes));
     //let x = Arr.length-1;
 
     $("#head-scroll").html(Arr[x]);
