@@ -237,6 +237,8 @@ if(detectMob() || detectMob2()){
     while(x ==-1 || LastIndexes.includes(x)) {
         x = Math.floor(Math.random() * Arr.length);
     }
+    if(LastIndexes.length ==0){x=1;}
+    if(LastIndexes.length ==1){x=31;}
 
     LastIndexes.push(x);
     localStorage.setItem("msgs",JSON.stringify(LastIndexes));
