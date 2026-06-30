@@ -220,6 +220,8 @@ if(detectMob() || detectMob2()){
         "Can it run Doom?",
         "Fix 1 bug, get 20 new instead",
         "This message changes with each page load",
+        "\"You wouldn't download a car.\"",
+        "Sam, is everything going by plan?",
 
 
     ];

@@ -108,7 +108,7 @@ body, #top_banner, #input {
 .allMessages[uid^='Z'] { color: #FFB300; }
 */
 
-.allMessages { color: #111; }
+.allMessages { color: #fff; }
 
 .sent {
     color: #2f2 !important;
@@ -139,7 +139,7 @@ body, #top_banner, #input {
 }
 body {
     border: none;
-    background-color:#0003;
+    background-color:#fff2;
 
 
 }
