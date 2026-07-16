@@ -222,6 +222,7 @@ if(detectMob() || detectMob2()){
         "This message changes with each page load",
         "\"You wouldn't download a car.\"",
         "Sam, is everything going by plan?",
+        "Gotta verify my age with systemD...",
 
 
     ];
@@ -231,7 +232,7 @@ if(detectMob() || detectMob2()){
         LastIndexes =JSON.parse(localStorage.getItem("msgs"));
     }
     console.log(LastIndexes);
-    if(LastIndexes.length >15){
+    if(LastIndexes.length >20){
         LastIndexes.shift();
     }
 
